@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sample.SampleBorder"
+ >
+    <top>
+
+    <Label text="Lubos Sukup" BorderPane.alignment="CENTER" ></Label>
+
+
+    </top>
+    <center>
+        <GridPane alignment="CENTER" hgap="10" vgap="10"
+                  gridLinesVisible="false"   >
+
+            <padding>
+                <Insets topRightBottomLeft="20"/>
+            </padding>
+            <Label text="Prihlasovacie meno" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+
+            <Label text="Heslo" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField  promptText="meno" fx:id="prihlasovacieMeno"
+                        onKeyReleased="#onKeyReleased"
+                        GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <TextField  promptText="heslo" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        </GridPane>
+    </center>
+    <bottom>
+        <HBox spacing="10" alignment="TOP_RIGHT">
+            <padding>
+                <Insets right="20" left="20" top="20" bottom="20"/>
+            </padding>
+            <Button text="Ok" fx:id="ok" prefWidth="90" onAction="#onActionHandler"/>
+            <Button text="Cancel" fx:id="cancel" prefWidth="90" onAction="#onActionHandler"/>
+            <Button text="Help" prefWidth="90"/>
+        </HBox>
+    </bottom>
+    <right>
+        <VBox alignment="CENTER" spacing="10">
+            <padding>
+                <Insets right="20" left="20" top="20" bottom="20"/>
+            </padding>
+            <Label fx:id="zmena" text="Zmena hesla"></Label>
+            <Button fx:id="pomoc" text="Zmena" prefWidth="80"> </Button>
+            <Button text="Pomoc" prefWidth="80" > </Button>
+        </VBox>
+         </right>
+
+    <left>
+        <VBox>
+            <CheckBox text="nejaky check" selected="true" >
+
+            </CheckBox>
+            <fx:define>
+                <ToggleGroup fx:id="group"/>
+            </fx:define>
+
+
+            <RadioButton text=" radio buttonik1" toggleGroup="$group" selected="true"/>
+            <RadioButton text=" radio buttonik2" toggleGroup="$group"/>
+            <RadioButton text=" radio buttonik3" toggleGroup="$group"/>
+
+
+        </VBox>
+
+
+
+    </left>
+
+
+</BorderPane>
